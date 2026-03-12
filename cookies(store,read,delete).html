@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button id="store" onclick="store()">store</button>
+    <button id="read" onclick="read()">read</button>
+    <button id="del" onclick="del()">delete</button>
+    <script>
+    var rahman = document.getElementById("input");
+
+    window.onload =function()
+    {
+        if(document.cookie!=="")
+    {
+        var data =document.cookie.split('=');
+        rahman.value=data[1];
+    }
+    else
+    {
+        rahman.value =="";
+        alert("no cookies available")
+    }
+    }
+    function store()
+    {
+        document.cookie ="name="+rahman.value+"; expires= mon, 30 nov 2026 12:00:00 UTC";
+        
+    } 
+    function read()
+    {
+        window.alert(document.cookie);
+    }
+    function del()
+    {
+        document.cookie ="name="+rahman.value+";expires =mon,30 nov 2020 12:00:00 UTC";
+        document.getElementById("input").value="";
+    
+    }
+    </script>
+</body>
+</html>

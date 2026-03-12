@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bdy">
+    <h1>select change backgroud color</h1>
+    <input type="radio" name="bg" id="" onclick="demo(this)" value="red">red
+    <input type="radio" name="bg" id="" onclick="demo(this)" value="blue">blue
+    <input type="radio" name="bg" id="" onclick="demo(this)" value="green">green
+
+    <script>
+
+        window.onload = function ()
+        {
+            var color =document.cookie.split('='); //in the form of array store in color variable
+            document.getElementById("bdy").style.backgroundColor =color[1];
+        }
+        function demo(element)
+        {
+            var store =element.value;
+          let body =document.getElementById("bdy");
+          body.style.backgroundColor=store;
+          document.cookie="name="+store+";expires = mon,30 nov 2026 12:00:00 UTC";
+        }
+    </script>
+</body>
+</html>
