@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Please wait download will start in <span id="timer">5</span> seconds</p>
+    <a href="butterfly.jpeg" download  id="manual">manually download if not starts</a>
+
+    <script>
+        var timer1 = document.getElementById("timer");
+        var manual_a = document.getElementById("manual");
+
+        window.onload = function ()
+        {
+            var time = 5;
+            setInterval(timer,1000)
+
+            function timer()
+            {
+                timer1.innerHTML =time--;
+                if(time<0)
+            {
+               manual_a.click();
+               clearInterval(timer);
+               
+            }
+            }
+        }
+
+    </script>
+</body>
+</html>
